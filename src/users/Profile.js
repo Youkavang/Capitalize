@@ -1,7 +1,7 @@
 import { useAuth } from '../context/AuthContext'
 import React, {useEffect} from 'react'
 import ProfileEvent from '../components/ProfileEvent';
-import { onSnapshot, collection, doc, setDoc, addDoc, query, where, orderBy } from 'firebase/firestore';
+import { onSnapshot, collection, query, where } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
 
@@ -10,7 +10,6 @@ const Profile = () => {
 
   useEffect(
       () =>{
-      //Will organize by name of who made the event in ascending order when a button is toggled
       const eventRef = collection(db, "events");
       const q = query(eventRef, where("userId", '==', uid))
       onSnapshot(q, (querySnapshot) =>
@@ -36,7 +35,7 @@ const Profile = () => {
             url={event.website}
             key={event.id}  
           />
-        ))}
+        )) || <h1>Looks like you don't have any events registered</h1>}
       </div>
   )
 }

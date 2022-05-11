@@ -26,6 +26,7 @@ const AuthContext = ({children}) => {
     }
 
     const logout = async () => {
+        setProfileEvents()
         return signOut(auth)
     }
 
