@@ -17,19 +17,23 @@ const AuthContext = ({children}) => {
     const [loginModal, setLoginModal] = useState(false);
     const [eventModal, setEventModal] = useState(false);
 
+    // registers the email and password typed in to the firestore database
     const signUp = async (registerEmail, registerPassword) => {
        return createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
     }
 
+    //checks to see if email and password matches so user can login
     const login = async (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    //logs out the current user
     const logout = async () => {
         setProfileEvents()
         return signOut(auth)
     }
 
+    //keeps track and detects a change in the current user
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth,(user)=>{
             setCurrentUser(user)

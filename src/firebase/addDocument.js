@@ -1,12 +1,14 @@
-import {doc, collection, setDoc, serverTimestamp} from '/firebase/firestore';
-import {db} from './config';
+// trying to create a reuseable function to add doucments to the database
 
-const addDocument = (collectionName, documentObj, id) =>{
-    const docRef = doc(collection(db, collectionName), id);
-    return setDoc(docRef, {
-        ...documentObj,
-        timestamp: serverTimestamp(),
-    });
-};
+// import {doc, collection, setDoc, serverTimestamp} from '/firebase/firestore';
+// import {db} from './config';
 
-export default addDocument;
+// const addDocument = (collectionName, documentObj, id) =>{
+//     const docRef = doc(collection(db, collectionName), id);
+//     return setDoc(docRef, {
+//         ...documentObj,
+//         timestamp: serverTimestamp(),
+//     });
+// };
+
+// export default addDocument;

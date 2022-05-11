@@ -13,6 +13,7 @@ function EventList() {
   const [isTagsToggled, setIsTagsToggled] = useState(false);
   const [isStartToggled, setIsStartToggled] = useState(false);
 
+
   useEffect(
       () =>{
       //Will organize by name of who made the event in ascending order when a button is toggled

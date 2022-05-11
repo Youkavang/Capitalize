@@ -1,25 +1,26 @@
-import { storage } from "./config"
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
-import { async } from "@firebase/util"
+// testing code for a file upload progess
+// import { storage } from "./config"
+// import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
+// import { async } from "@firebase/util"
 
-const uploadFileProgress = (file, subFolder, imageName, setProgress ) => {
-    return new Promise((resolve,reject) =>{
-        const storageRef  = ref(storage, subFolder + '/' + imageName)
-        const upload = uploadBytesResumable(storageRef, file)
-        upload.on('state_change', (snapshot)=>{
-            const progress = (snapshot.bytesTransferred/ snapshot.totalBytes)*100
-            setProgress = progress
-        }, (error)=>{
-            reject(error)
-        }, async()=>{
-            try{
-                const url = await getDownloadURL(storageRef)
-                resolve(url)
-            } catch(error){
-                reject(error)
-            }
-        })
-    })
-}
+// const uploadFileProgress = (file, subFolder, imageName, setProgress ) => {
+//     return new Promise((resolve,reject) =>{
+//         const storageRef  = ref(storage, subFolder + '/' + imageName)
+//         const upload = uploadBytesResumable(storageRef, file)
+//         upload.on('state_change', (snapshot)=>{
+//             const progress = (snapshot.bytesTransferred/ snapshot.totalBytes)*100
+//             setProgress = progress
+//         }, (error)=>{
+//             reject(error)
+//         }, async()=>{
+//             try{
+//                 const url = await getDownloadURL(storageRef)
+//                 resolve(url)
+//             } catch(error){
+//                 reject(error)
+//             }
+//         })
+//     })
+// }
 
-export default uploadFileProgress
+// export default uploadFileProgress

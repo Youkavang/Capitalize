@@ -27,6 +27,7 @@ function Calendar() {
 
   return (
     <div className="App">
+      {/* {if current user does not exist, add event button will be hidden} */}
       {(!currentUser) ? (<div className='calendar'>
         <FullCalendar
           plugins={[ dayGridPlugin, ]}
@@ -67,7 +68,10 @@ function Calendar() {
       <EventForm />
     </Modal>
      
-      {/* <Modal
+      {/* 
+      Modal that will pop up when user clicks on event on calendar
+      
+      <Modal
         open={infoModal}
         appElement={document.getElementById('root')}
         className="infoModal"
