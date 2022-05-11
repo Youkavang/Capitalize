@@ -22,7 +22,7 @@ function Calendar() {
         )
         console.log(events)
       },
-        [events]
+        []
     );
 
   return (
