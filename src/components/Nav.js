@@ -52,7 +52,7 @@ export default function AccountMenu() {
         <Link style={{textDecoration: 'none'}} to='/' className='link'><Typography sx={{minWidth: 100, marginRight: 20, color: 'white'}}>Home</Typography></Link>
         <Link style={{textDecoration: 'none'}} to='/Calendar' className='link'><Typography sx={{minWidth: 100, position: 'absolute', top: 0, left: 200, color: 'white'}}>Calendar</Typography></Link>
         <Link style={{textDecoration: 'none'}} to='/EventList' className='link'><Typography sx={{minWidth: 100, position: 'absolute', top: 0, left: 400, color: 'white'}}>Event List</Typography></Link>
-        <Button sx={{position: 'absolute', top: 6, right: 5, height: 34,}} startIcon={<LockIcon/>} onClick={openLoginModal}>Login</Button>
+        <Button sx={{position: 'absolute', top: 6, right: "2%", height: 34,}} startIcon={<LockIcon/>} onClick={openLoginModal}>Login</Button>
       </Box>
       </Box>: (
       <Box sx={{display: 'flex'}}>
